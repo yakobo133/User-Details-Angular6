@@ -1,0 +1,17 @@
+<div class="container">
+<div class="sidebar">
+    <table class="table">
+        <tr *ngFor="let user of usersData">
+            <td><a class="pointer" [ngClass]="user?.selected ? 'selected-user' : ''" (click)="setSelectedUser(user)">{{user.name.first +" "+ user.name.last}}</a></td>
+            <td><span *ngIf="user?.counter>0" style="color: white;text-align:right;">{{user?.counter}}</span><!-- <a routerLink="/user-details" routerLinkActive="active">Crisis Center</a> --></td>
+        </tr>
+    </table>
+</div>
+        <!-- <router-outlet></router-outlet> -->
+ <user-details [user]="selectedUser" (votingEmitter)="votingEmitter($event)"></user-details>
+
+ <!-- {{selectedUser?.name.first}} -->
+
+
+
+</div>

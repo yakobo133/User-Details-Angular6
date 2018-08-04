@@ -1,0 +1,29 @@
+<div *ngIf="_user" class="main-panel">
+
+  <div class="card margin-up">
+    <div class="details">
+      <div class="user_photo horizontal_center" id="user_photo">
+        <img [src]="imagePath">
+      </div>
+      <p id="user_title">{{title}}</p>
+      <p id="user_value" style="text-transform: lowercase;">{{value}}</p>
+    </div>
+    <ul class="values_list horizontal_center" id="values_list">
+      <li [ngClass]="isNameSelected ? 'active' : '' " data-title="Hi, My name is" data-label="name"(mouseover)="nameSelected($event)" ></li>
+      <li [ngClass]="isEmailSelected ? 'active' : '' "data-title="My email address is" data-label="email"(mouseover)="emailSelected($event)" ></li>
+      <li [ngClass]="isBirthDaySelected ? 'active' : '' " data-title="My birthday is" data-label="birthday"(mouseover)="birthDaySelected($event)"  ></li>
+      <li [ngClass]="isAddressSelected ? 'active' : '' "data-title="My address is" data-label="location"(mouseover)="addressSelected($event)" ></li>
+      <li [ngClass]="isPhoneSelected ? 'active' : '' "data-title="My phone number is" data-label="phone"(mouseover)="phoneSelected($event)" ></li>
+      <li [ngClass]="isPasswordSelected ? 'active' : '' "data-title="My password is" data-label="pass"(mouseover)="passwordSelected($event)" ></li>
+    </ul>
+  </div>
+
+  <button  mat-fab="" class="vote-button mat-fab mat-accent" (click)="addVoteToUser(_user)">
+    <span class="mat-button-wrapper">
+      <mat-icon  aria-label="Example icon-button with a heart icon" class="vote-icon mat-icon material-icons" role="img" aria-hidden="true">favorite</mat-icon>
+    </span>
+    <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+    <div class="mat-button-focus-overlay"></div>
+  </button>
+</div>
+
